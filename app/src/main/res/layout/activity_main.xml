@@ -1,66 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Activity.MainActivity">
-    <android.support.v7.widget.Toolbar
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbar"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="@color/white"
-        app:titleMargin="5dp"
-
-        />
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tablayout"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
-        app:tabIndicatorColor="@color/white"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/black"
-        >
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabEvent"
-            android:text="Event"
-            />
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabNearby"
-            android:text="NearBy"
-            />
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabWeather"
-            android:text="Weather"
-            />
-    </android.support.design.widget.TabLayout>
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </android.support.v4.view.ViewPager>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.activity.MainActivity">
 
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/filterBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="@dimen/medium_dp"
+                    android:text="Filter By"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/firstIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="From Date"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="01/01/2019" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1.0dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/black">
+
+                    </View>
 
 
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
 
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="To Date"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="01/02/2019" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:background="@color/black">
+
+                </View>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium"
+                    android:text="Total Expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium"
+                    android:id="@+id/totalAmountTV"
+                    android:text="10000 tk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:background="@color/black">
+
+                </View>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
 
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:text="Expense List"
+            android:textSize="@dimen/medium"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="15dp"
+            android:id="@+id/recyclerView"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_height="wrap_content">
+        </androidx.recyclerview.widget.RecyclerView>
 
 
-</LinearLayout>
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_add_circle_black_24dp" />
+
+
+    </LinearLayout>
+</layout>
